@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +16,11 @@ namespace _29Xpain
         public Form1()
         {
             InitializeComponent();
-            wypelnianie();
+            
         }
 
-        const int n = 10;
-        int[] tab = new int[n] ;
+
+        
 
         void sortowanie(int n, int[] tab)
         {
@@ -38,30 +39,45 @@ namespace _29Xpain
             }
         }
 
-        void wypelnianie ()
-        {
+      
 
-            for (int i = 0; i < 10; i++) {
-                
-                Random rnd = new Random();
-                int es = rnd.Next(-1, 100);
-
-                tab[i] = es;
-            }
-
-        }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
-            label2.Text = "";
-            sortowanie(n,tab);
-            for (int i = 0; i < n; i++)
+            string fileContent = File.ReadAllText("somefile.txt");
+            string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            int[] integers = new int[integerStrings.Length];
+            int ind = 0;
+            for (int n = 0; n < integerStrings.Length; n++)
             {
-                label2.Text += tab[i] + "\n";
+                integers[n] = int.Parse(integerStrings[n]);
+                ind++;
+            }
+                
+
+            label2.Text = "";
+            sortowanie(ind,integers);
+            for (int i = 0; i < ind; i++)
+            {
+                label2.Text += integers[i] + "\n";
             }
         }
-    }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+
+            string fileContent = File.ReadAllText("somefile.txt");
+            string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            int[] integers = new int[integerStrings.Length];
+            int licznik;
+            for (int n = 0; n < integerStrings.Length; n++)
+                integers[n] = int.Parse(integerStrings[n]);
+               
+           
+        }
+    }
+    
         
        
 }
