@@ -61,8 +61,9 @@ namespace _29Xpain
       
 
         
-        private void button1_Click(object sender, EventArgs e)
+        private void srtbtn_Click(object sender, EventArgs e)
         {
+            //wczytanie pliku
             string fileContent = File.ReadAllText("somefile.txt");
             string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             int[] integers = new int[integerStrings.Length];
@@ -72,20 +73,20 @@ namespace _29Xpain
                 integers[n] = int.Parse(integerStrings[n]);
                 ind++;
             }
-                
-
-            label2.Text = "";
+            // 
+            
+            Lwstaw.Text = "";
             sortowanie(ind,integers);
             for (int i = 0; i < ind; i++)
             {
-                label2.Text += integers[i] + "\n";
+                Lwstaw.Text += integers[i] + "\n";
             }
 
-            label3.Text = "";
+            Lbabel.Text = "";
             sortowane_bobelkowe(integers);
             for (int i = 0; i < ind; i++)
             {
-                label3.Text += integers[i] + "\n";
+                Lbabel.Text += integers[i] + "\n";
             }
         }
 
@@ -103,15 +104,9 @@ namespace _29Xpain
            
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
+        
 
-        }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
     
         

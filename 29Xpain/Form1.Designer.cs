@@ -29,48 +29,57 @@ namespace _29Xpain
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.srtbtn = new System.Windows.Forms.Button();
+            this.Lwstaw = new System.Windows.Forms.Label();
+            this.Lbabel = new System.Windows.Forms.Label();
+            this.szybsrt = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // srtbtn
             // 
-            this.button1.Location = new System.Drawing.Point(227, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(331, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "sortuj";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.srtbtn.Location = new System.Drawing.Point(216, 42);
+            this.srtbtn.Name = "srtbtn";
+            this.srtbtn.Size = new System.Drawing.Size(331, 23);
+            this.srtbtn.TabIndex = 0;
+            this.srtbtn.Text = "sortuj";
+            this.srtbtn.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // Lwstaw
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 249);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(269, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Tu wyświetli się wynik sortowania prze wstawianie";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.Lwstaw.AutoSize = true;
+            this.Lwstaw.Location = new System.Drawing.Point(12, 117);
+            this.Lwstaw.Name = "Lwstaw";
+            this.Lwstaw.Size = new System.Drawing.Size(190, 15);
+            this.Lwstaw.TabIndex = 3;
+            this.Lwstaw.Text = "wynik sortowania przez wstawianie";
             // 
-            // label3
+            // Lbabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(339, 248);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(255, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "tu wyświetli się wynik sortowania bąbelkowego";
+            this.Lbabel.AutoSize = true;
+            this.Lbabel.Location = new System.Drawing.Point(139, 158);
+            this.Lbabel.Name = "Lbabel";
+            this.Lbabel.Size = new System.Drawing.Size(173, 15);
+            this.Lbabel.TabIndex = 6;
+            this.Lbabel.Text = "wynik sortowania bąbelkowego";
+            // 
+            // szybsrt
+            // 
+            this.szybsrt.AutoSize = true;
+            this.szybsrt.Location = new System.Drawing.Point(356, 195);
+            this.szybsrt.Name = "szybsrt";
+            this.szybsrt.Size = new System.Drawing.Size(154, 15);
+            this.szybsrt.TabIndex = 7;
+            this.szybsrt.Text = "wynik sortowania szybkiego";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.szybsrt);
+            this.Controls.Add(this.Lbabel);
+            this.Controls.Add(this.Lwstaw);
+            this.Controls.Add(this.srtbtn);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -80,9 +89,10 @@ namespace _29Xpain
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button srtbtn;
+        private System.Windows.Forms.Label Lwstaw;
+        private System.Windows.Forms.Label Lbabel;
+        private System.Windows.Forms.Label szybsrt;
     }
 }
 
