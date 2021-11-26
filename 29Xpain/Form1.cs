@@ -39,6 +39,25 @@ namespace _29Xpain
             }
         }
 
+        void sortowane_bobelkowe(int[] tab)
+        {
+            int b = tab.Length;
+            do
+            {
+                for (int i = 0; i < b - 1; i++)
+                {
+                    if (tab[i] > tab[i + 1])
+                    {
+                        int tmp = tab[i];
+                        tab[i] = tab[i + 1];
+                        tab[i + 1] = tmp;
+                    }
+                }
+                b--;
+            }
+            while (b > 1);
+        }
+
       
 
         
@@ -61,6 +80,13 @@ namespace _29Xpain
             {
                 label2.Text += integers[i] + "\n";
             }
+
+            label3.Text = "";
+            sortowane_bobelkowe(integers);
+            for (int i = 0; i < ind; i++)
+            {
+                label3.Text += integers[i] + "\n";
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -75,6 +101,16 @@ namespace _29Xpain
                 integers[n] = int.Parse(integerStrings[n]);
                
            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
     
