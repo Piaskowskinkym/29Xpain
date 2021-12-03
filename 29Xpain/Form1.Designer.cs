@@ -32,7 +32,7 @@ namespace _29Xpain
             this.srtbtn = new System.Windows.Forms.Button();
             this.Lwstaw = new System.Windows.Forms.Label();
             this.Lbabel = new System.Windows.Forms.Label();
-            this.szybsrt = new System.Windows.Forms.Label();
+            this.Lszybkie = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // srtbtn
@@ -43,6 +43,7 @@ namespace _29Xpain
             this.srtbtn.TabIndex = 0;
             this.srtbtn.Text = "sortuj";
             this.srtbtn.UseVisualStyleBackColor = true;
+            this.srtbtn.Click += new System.EventHandler(this.srtbtn_Click_1);
             // 
             // Lwstaw
             // 
@@ -62,21 +63,21 @@ namespace _29Xpain
             this.Lbabel.TabIndex = 6;
             this.Lbabel.Text = "wynik sortowania bąbelkowego";
             // 
-            // szybsrt
+            // Lszybkie
             // 
-            this.szybsrt.AutoSize = true;
-            this.szybsrt.Location = new System.Drawing.Point(356, 195);
-            this.szybsrt.Name = "szybsrt";
-            this.szybsrt.Size = new System.Drawing.Size(154, 15);
-            this.szybsrt.TabIndex = 7;
-            this.szybsrt.Text = "wynik sortowania szybkiego";
+            this.Lszybkie.AutoSize = true;
+            this.Lszybkie.Location = new System.Drawing.Point(356, 195);
+            this.Lszybkie.Name = "Lszybkie";
+            this.Lszybkie.Size = new System.Drawing.Size(154, 15);
+            this.Lszybkie.TabIndex = 7;
+            this.Lszybkie.Text = "wynik sortowania szybkiego";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.szybsrt);
+            this.Controls.Add(this.Lszybkie);
             this.Controls.Add(this.Lbabel);
             this.Controls.Add(this.Lwstaw);
             this.Controls.Add(this.srtbtn);
@@ -92,7 +93,7 @@ namespace _29Xpain
         private System.Windows.Forms.Button srtbtn;
         private System.Windows.Forms.Label Lwstaw;
         private System.Windows.Forms.Label Lbabel;
-        private System.Windows.Forms.Label szybsrt;
+        private System.Windows.Forms.Label Lszybkie;
     }
 }
 

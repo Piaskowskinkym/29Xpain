@@ -16,11 +16,9 @@ namespace _29Xpain
         public Form1()
         {
             InitializeComponent();
-            
+
         }
 
-
-        
 
         void sortowanie(int n, int[] tab)
         {
@@ -38,6 +36,7 @@ namespace _29Xpain
                 tab[j + 1] = pom; //wstawienie pom w odpowiednie miejsce
             }
         }
+
 
         void sortowane_bobelkowe(int[] tab)
         {
@@ -58,10 +57,37 @@ namespace _29Xpain
             while (b > 1);
         }
 
-      
 
-        
-        private void srtbtn_Click(object sender, EventArgs e)
+       void szybkie_sortowanie(int[] tab, int lewy, int prawy)
+        {
+            if (prawy <= lewy) return;
+
+            int i = lewy - 1, j = prawy + 1,
+            pivot = tab[(lewy + prawy) / 2];
+            
+            while (true)
+            {
+                while (pivot > tab[++i]) ;
+                while (pivot < tab[--j]) ;
+                if (i <= j)
+                {
+                    int it = i;
+                    tab[i] = tab[j];
+                    tab[j] = tab[it];
+                }
+                else
+                    break;
+            }
+
+            if (j > lewy)
+                szybkie_sortowanie(tab, lewy, j);
+            if (i < prawy)
+                szybkie_sortowanie(tab, i, prawy);
+        }
+      
+     
+
+        private void srtbtn_Click_1(object sender, EventArgs e)
         {
             //wczytanie pliku
             string fileContent = File.ReadAllText("somefile.txt");
@@ -74,39 +100,28 @@ namespace _29Xpain
                 ind++;
             }
             // 
-            
+            // Sortowanie przez wstawianie
             Lwstaw.Text = "";
-            sortowanie(ind,integers);
+            sortowanie(ind, integers);
             for (int i = 0; i < ind; i++)
             {
                 Lwstaw.Text += integers[i] + "\n";
             }
-
+            // Sortowanie bąbelkowe
             Lbabel.Text = "";
             sortowane_bobelkowe(integers);
             for (int i = 0; i < ind; i++)
             {
                 Lbabel.Text += integers[i] + "\n";
             }
+            // Szybkie sortowanie
+             Lszybkie.Text = "";
+             szybkie_sortowanie(integers, 0, ind - 1);
+             for (int i = 0; i < ind; i++)
+             {
+                 Lszybkie.Text += integers[i] + "\n";
+             }
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-
-            string fileContent = File.ReadAllText("somefile.txt");
-            string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            int[] integers = new int[integerStrings.Length];
-            int licznik;
-            for (int n = 0; n < integerStrings.Length; n++)
-                integers[n] = int.Parse(integerStrings[n]);
-               
-           
-        }
-
-        
-
-
     }
     
         
