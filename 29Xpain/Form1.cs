@@ -59,7 +59,7 @@ namespace _29Xpain
 
 
        void szybkie_sortowanie(int[] tab, int lewy, int prawy)
-        {
+        {//
             if (prawy <= lewy) return;
 
             int i = lewy - 1, j = prawy + 1,
