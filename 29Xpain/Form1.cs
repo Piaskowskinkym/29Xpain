@@ -58,17 +58,17 @@ namespace _29Xpain
         }
 
 
-       void szybkie_sortowanie(int[] tab, int lewy, int prawy)
-        {//
+        void szybkie_sortowanie(int[] tab, int lewy, int prawy)
+        {
             if (prawy <= lewy) return;
 
-            int i = lewy - 1, j = prawy + 1,
+            int i = lewy -1, j = prawy +1 ,
             pivot = tab[(lewy + prawy) / 2];
-            
+
             while (true)
             {
-                while (pivot > tab[++i]) ;
-                while (pivot < tab[--j]) ;
+                while (pivot > tab[i++]) ;
+                while (pivot < tab[j-=1]) ;
                 if (i <= j)
                 {
                     int it = i;
@@ -84,47 +84,147 @@ namespace _29Xpain
             if (i < prawy)
                 szybkie_sortowanie(tab, i, prawy);
         }
-      
-     
 
-        private void srtbtn_Click_1(object sender, EventArgs e)
+        public void sortowanie_kopcowe(int[] tab)
+        {
+            int n = tab.Length;
+            for (int i = n / 2 - 1; i >= 0; i--)
+                kopcowanie(tab, n, i);
+
+            for (int i = n - 1; i > 0; i--)
+            {
+               
+                int temp = tab[0];
+                tab[0] = tab[i];
+                tab[i] = temp;
+
+          
+                kopcowanie(tab, i, 0);
+            }
+        }
+        void kopcowanie(int[] arr, int n, int i)
+        {
+            int largest = i; 
+            int l = 2 * i + 1; 
+            int r = 2 * i + 2; 
+
+          
+            if (l < n && arr[l] > arr[largest])
+                largest = l;
+
+         
+            if (r < n && arr[r] > arr[largest])
+                largest = r;
+
+          
+            if (largest != i)
+            {
+                int swap = arr[i];
+                arr[i] = arr[largest];
+                arr[largest] = swap;
+
+               
+                kopcowanie(arr, n, largest);
+            }
+        }
+
+
+
+
+
+        private void srtwbtn_Click(object sender, EventArgs e)
+          {
+              //wczytanie pliku
+              string fileContent = File.ReadAllText("somefile.txt");
+              string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+              int[] integers = new int[integerStrings.Length];
+              
+              for (int n = 0; n < integerStrings.Length; n++)
+              {
+                  integers[n] = int.Parse(integerStrings[n]);
+              }
+                int indx = integers.Length;
+            // 
+            // Sortowanie przez wstawianie
+            Lwstaw.Text = "";
+              sortowanie(indx, integers);
+              for (int i = 0; i < indx; i++)
+              {
+                  Lwstaw.Text += integers[i] + "\n";
+              }
+          }
+
+          private void srtbbtn_Click(object sender, EventArgs e)
+          {
+              //wczytanie pliku
+              string fileContent = File.ReadAllText("somefile.txt");
+              string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+              int[] integers = new int[integerStrings.Length];
+             
+              for (int n = 0; n < integerStrings.Length; n++)
+              {
+                  integers[n] = int.Parse(integerStrings[n]);
+                  
+              }
+            int indx = integers.Length;
+            // 
+            // Sortowanie bąbelkowe
+            Lbabel.Text = "";
+              sortowane_bobelkowe(integers);
+              for (int i = 0; i < indx; i++)
+              {
+                  Lbabel.Text += integers[i] + "\n";
+              }
+          }
+
+        private void srtsbtn_Click(object sender, EventArgs e)
         {
             //wczytanie pliku
             string fileContent = File.ReadAllText("somefile.txt");
             string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             int[] integers = new int[integerStrings.Length];
-            int ind = 0;
             for (int n = 0; n < integerStrings.Length; n++)
             {
                 integers[n] = int.Parse(integerStrings[n]);
-                ind++;
             }
+            int indx = integers.Length;
             // 
-            // Sortowanie przez wstawianie
-            Lwstaw.Text = "";
-            sortowanie(ind, integers);
-            for (int i = 0; i < ind; i++)
-            {
-                Lwstaw.Text += integers[i] + "\n";
-            }
-            // Sortowanie bąbelkowe
-            Lbabel.Text = "";
-            sortowane_bobelkowe(integers);
-            for (int i = 0; i < ind; i++)
-            {
-                Lbabel.Text += integers[i] + "\n";
-            }
             // Szybkie sortowanie
-             Lszybkie.Text = "";
-             szybkie_sortowanie(integers, 0, ind - 1);
-             for (int i = 0; i < ind; i++)
-             {
-                 Lszybkie.Text += integers[i] + "\n";
-             }
+            Lszybkie.Text = "";
+            szybkie_sortowanie(integers, 0, indx-1);
+            for (int i = 0; i < indx; i++)
+            {
+                Lszybkie.Text += integers[i] + "\n";
+            }
+
+
+
+        }
+
+        private void Lbabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void srthbtn_Click(object sender, EventArgs e)
+        {
+            //wczytanie pliku
+            string fileContent = File.ReadAllText("somefile.txt");
+            string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            int[] integers = new int[integerStrings.Length];
+            for (int n = 0; n < integerStrings.Length; n++)
+            {
+                integers[n] = int.Parse(integerStrings[n]);
+            }
+            int indx = integers.Length;
+            //
+           Lkopcowanie.Text = "";
+           sortowanie_kopcowe(integers);
+            for (int i = 0; i < indx; i++)
+            {
+                Lkopcowanie.Text += integers[i] + "\n";
+            }
         }
     }
-    
-        
-       
 }
 
