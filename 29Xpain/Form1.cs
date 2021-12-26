@@ -18,7 +18,7 @@ namespace _29Xpain
             InitializeComponent();
 
         }
-
+        
 
         void sortowanie(int n, int[] tab)
         {
@@ -58,7 +58,7 @@ namespace _29Xpain
         }
 
 
-        void szybkie_sortowanie(int[] tab, int lewy, int prawy)
+       /* void szybkie_sortowanie(int[] tab, int lewy, int prawy)
         {
             if (prawy <= lewy) return;
 
@@ -83,9 +83,9 @@ namespace _29Xpain
                 szybkie_sortowanie(tab, lewy, j);
             if (i < prawy)
                 szybkie_sortowanie(tab, i, prawy);
-        }
+        }*/
 
-        public void sortowanie_kopcowe(int[] tab)
+         void sortowanie_kopcowe(int[] tab)
         {
             int n = tab.Length;
             for (int i = n / 2 - 1; i >= 0; i--)
@@ -130,20 +130,16 @@ namespace _29Xpain
 
 
 
-
-
         private void srtwbtn_Click(object sender, EventArgs e)
           {
-              //wczytanie pliku
-              string fileContent = File.ReadAllText("somefile.txt");
-              string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-              int[] integers = new int[integerStrings.Length];
-              
-              for (int n = 0; n < integerStrings.Length; n++)
-              {
-                  integers[n] = int.Parse(integerStrings[n]);
-              }
-                int indx = integers.Length;
+            string fileContent = File.ReadAllText("somefile.txt");
+            string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            int[] integers = new int[integerStrings.Length];
+            for (int n = 0; n < integerStrings.Length; n++)
+            {
+                integers[n] = int.Parse(integerStrings[n]);
+            }
+            int indx = integers.Length;
             // 
             // Sortowanie przez wstawianie
             Lwstaw.Text = "";
@@ -188,10 +184,10 @@ namespace _29Xpain
                 integers[n] = int.Parse(integerStrings[n]);
             }
             int indx = integers.Length;
-            // 
+            //  
             // Szybkie sortowanie
             Lszybkie.Text = "";
-            szybkie_sortowanie(integers, 0, indx-1);
+            //szybkie_sortowanie(integers, 0, indx-1);
             for (int i = 0; i < indx; i++)
             {
                 Lszybkie.Text += integers[i] + "\n";
@@ -225,6 +221,9 @@ namespace _29Xpain
                 Lkopcowanie.Text += integers[i] + "\n";
             }
         }
+
+       
+
     }
 }
 

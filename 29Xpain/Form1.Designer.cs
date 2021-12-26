@@ -37,6 +37,8 @@ namespace _29Xpain
             this.srtsbtn = new System.Windows.Forms.Button();
             this.srthbtn = new System.Windows.Forms.Button();
             this.Lkopcowanie = new System.Windows.Forms.Label();
+            this.srtscbtn = new System.Windows.Forms.Button();
+            this.Lscalanie = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // srtwbtn
@@ -54,28 +56,28 @@ namespace _29Xpain
             this.Lwstaw.AutoSize = true;
             this.Lwstaw.Location = new System.Drawing.Point(12, 121);
             this.Lwstaw.Name = "Lwstaw";
-            this.Lwstaw.Size = new System.Drawing.Size(190, 15);
+            this.Lwstaw.Size = new System.Drawing.Size(156, 15);
             this.Lwstaw.TabIndex = 3;
-            this.Lwstaw.Text = "wynik sortowania przez wstawianie";
+            this.Lwstaw.Text = "sortowanie przez wstawianie";
             // 
             // Lbabel
             // 
             this.Lbabel.AutoSize = true;
-            this.Lbabel.Location = new System.Drawing.Point(208, 121);
+            this.Lbabel.Location = new System.Drawing.Point(184, 121);
             this.Lbabel.Name = "Lbabel";
-            this.Lbabel.Size = new System.Drawing.Size(173, 15);
+            this.Lbabel.Size = new System.Drawing.Size(125, 15);
             this.Lbabel.TabIndex = 6;
-            this.Lbabel.Text = "wynik sortowania bąbelkowego";
+            this.Lbabel.Text = "sortowanie bąbelkowe";
             this.Lbabel.Click += new System.EventHandler(this.Lbabel_Click);
             // 
             // Lszybkie
             // 
             this.Lszybkie.AutoSize = true;
-            this.Lszybkie.Location = new System.Drawing.Point(387, 121);
+            this.Lszybkie.Location = new System.Drawing.Point(329, 121);
             this.Lszybkie.Name = "Lszybkie";
-            this.Lszybkie.Size = new System.Drawing.Size(154, 15);
+            this.Lszybkie.Size = new System.Drawing.Size(106, 15);
             this.Lszybkie.TabIndex = 7;
-            this.Lszybkie.Text = "wynik sortowania szybkiego";
+            this.Lszybkie.Text = "sortowanie szybkie";
             // 
             // srtbbtn
             // 
@@ -110,17 +112,38 @@ namespace _29Xpain
             // Lkopcowanie
             // 
             this.Lkopcowanie.AutoSize = true;
-            this.Lkopcowanie.Location = new System.Drawing.Point(547, 121);
+            this.Lkopcowanie.Location = new System.Drawing.Point(451, 121);
             this.Lkopcowanie.Name = "Lkopcowanie";
-            this.Lkopcowanie.Size = new System.Drawing.Size(196, 15);
+            this.Lkopcowanie.Size = new System.Drawing.Size(162, 15);
             this.Lkopcowanie.TabIndex = 11;
-            this.Lkopcowanie.Text = "wynik sortowanie przez kopcowanie";
+            this.Lkopcowanie.Text = "sortowanie przez kopcowanie";
+            // 
+            // srtscbtn
+            // 
+            this.srtscbtn.Location = new System.Drawing.Point(631, 40);
+            this.srtscbtn.Name = "srtscbtn";
+            this.srtscbtn.Size = new System.Drawing.Size(157, 36);
+            this.srtscbtn.TabIndex = 12;
+            this.srtscbtn.Text = "Sortowanie przez scalanie";
+            this.srtscbtn.UseVisualStyleBackColor = true;
+            
+            // 
+            // Lscalanie
+            // 
+            this.Lscalanie.AutoSize = true;
+            this.Lscalanie.Location = new System.Drawing.Point(631, 121);
+            this.Lscalanie.Name = "Lscalanie";
+            this.Lscalanie.Size = new System.Drawing.Size(141, 15);
+            this.Lscalanie.TabIndex = 13;
+            this.Lscalanie.Text = "Sortowanie przez scalanie";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Lscalanie);
+            this.Controls.Add(this.srtscbtn);
             this.Controls.Add(this.Lkopcowanie);
             this.Controls.Add(this.srthbtn);
             this.Controls.Add(this.srtsbtn);
@@ -146,6 +169,8 @@ namespace _29Xpain
         private System.Windows.Forms.Button srtsbtn;
         private System.Windows.Forms.Button srthbtn;
         private System.Windows.Forms.Label Lkopcowanie;
+        private System.Windows.Forms.Button srtscbtn;
+        private System.Windows.Forms.Label Lscalanie;
     }
 }
 
