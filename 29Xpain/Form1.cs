@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace _29Xpain
 {
+   
     public partial class Form1 : Form
     {
         public Form1()
@@ -18,7 +19,7 @@ namespace _29Xpain
             InitializeComponent();
 
         }
-        
+        public decimal powotorzenia;
 
         void sortowanie(int n, int[] tab)
         {
@@ -132,98 +133,146 @@ namespace _29Xpain
 
         private void srtwbtn_Click(object sender, EventArgs e)
           {
-            string fileContent = File.ReadAllText("somefile.txt");
-            string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            int[] integers = new int[integerStrings.Length];
-            for (int n = 0; n < integerStrings.Length; n++)
+            OpenFileDialog otworzplik = new OpenFileDialog();
+            otworzplik.InitialDirectory = "c:\\";
+            otworzplik.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            otworzplik.FilterIndex = 2;
+            otworzplik.RestoreDirectory = true;
+            if (otworzplik.ShowDialog() == DialogResult.OK)
             {
-                integers[n] = int.Parse(integerStrings[n]);
+                string fileContent = File.ReadAllText("somefile.txt");
+                string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                int[] integers = new int[integerStrings.Length];
+                for (int n = 0; n < integerStrings.Length; n++)
+                {
+                    integers[n] = int.Parse(integerStrings[n]);
+                }
+                int indx = integers.Length;
+                // Sortowanie przez wstawianie
+                int l = 1;
+                powotorzenia = powtorzenianUD.Value;
+                while (l < powotorzenia)
+                { 
+                    Lwstaw.Text = "";
+                    sortowanie(indx, integers);
+                    for (int i = 0; i < indx; i++)
+                    {
+                        Lwstaw.Text += integers[i] + "\n";
+                    }
+                    l++;
+                }
+            
             }
-            int indx = integers.Length;
-            // 
-            // Sortowanie przez wstawianie
-            Lwstaw.Text = "";
-              sortowanie(indx, integers);
-              for (int i = 0; i < indx; i++)
-              {
-                  Lwstaw.Text += integers[i] + "\n";
-              }
+            
           }
 
           private void srtbbtn_Click(object sender, EventArgs e)
           {
-              //wczytanie pliku
-              string fileContent = File.ReadAllText("somefile.txt");
-              string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-              int[] integers = new int[integerStrings.Length];
-             
-              for (int n = 0; n < integerStrings.Length; n++)
-              {
-                  integers[n] = int.Parse(integerStrings[n]);
-                  
-              }
-            int indx = integers.Length;
-            // 
-            // Sortowanie bąbelkowe
-            Lbabel.Text = "";
-              sortowane_bobelkowe(integers);
-              for (int i = 0; i < indx; i++)
-              {
-                  Lbabel.Text += integers[i] + "\n";
-              }
+            OpenFileDialog otworzplik = new OpenFileDialog();
+            otworzplik.InitialDirectory = "c:\\";
+            otworzplik.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            otworzplik.FilterIndex = 2;
+            otworzplik.RestoreDirectory = true;
+            if (otworzplik.ShowDialog() == DialogResult.OK)
+            {
+                string fileContent = File.ReadAllText("somefile.txt");
+                string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                int[] integers = new int[integerStrings.Length];
+                for (int n = 0; n < integerStrings.Length; n++)
+                {
+                    integers[n] = int.Parse(integerStrings[n]);
+                }
+                int indx = integers.Length;
+                // Sortowanie bąbelkowe
+                int l = 1;
+                powotorzenia = powtorzenianUD.Value;
+                while (l < powotorzenia)
+                {
+                    Lbabel.Text = "";
+                    sortowane_bobelkowe(integers);
+                    for (int i = 0; i < indx; i++)
+                    {
+                        Lbabel.Text += integers[i] + "\n";
+                    }
+                    l++;
+                }
+            }
           }
 
         private void srtsbtn_Click(object sender, EventArgs e)
         {
-            //wczytanie pliku
-            string fileContent = File.ReadAllText("somefile.txt");
-            string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            int[] integers = new int[integerStrings.Length];
-            for (int n = 0; n < integerStrings.Length; n++)
+            OpenFileDialog otworzplik = new OpenFileDialog();
+            otworzplik.InitialDirectory = "c:\\";
+            otworzplik.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            otworzplik.FilterIndex = 2;
+            otworzplik.RestoreDirectory = true;
+            if (otworzplik.ShowDialog() == DialogResult.OK)
             {
-                integers[n] = int.Parse(integerStrings[n]);
-            }
-            int indx = integers.Length;
-            //  
-            // Szybkie sortowanie
-            Lszybkie.Text = "";
-            //szybkie_sortowanie(integers, 0, indx-1);
-            for (int i = 0; i < indx; i++)
-            {
-                Lszybkie.Text += integers[i] + "\n";
-            }
-
+                string fileContent = File.ReadAllText("somefile.txt");
+                string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                int[] integers = new int[integerStrings.Length];
+                for (int n = 0; n < integerStrings.Length; n++)
+                {
+                    integers[n] = int.Parse(integerStrings[n]);
+                }
+                int indx = integers.Length;
+                // Szybkie sortowanie
+                int l = 1;
+                powotorzenia = powtorzenianUD.Value;
+                while (l < powotorzenia)
+                {
+                    Lszybkie.Text = "";
+                    //szybkie_sortowanie(integers, 0, indx-1);
+                    for (int i = 0; i < indx; i++)
+                    {
+                        Lszybkie.Text += integers[i] + "\n";
+                    }
+                    l++;
+                }
+        }
 
 
         }
 
-        private void Lbabel_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void srthbtn_Click(object sender, EventArgs e)
         {
-            //wczytanie pliku
-            string fileContent = File.ReadAllText("somefile.txt");
-            string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            int[] integers = new int[integerStrings.Length];
-            for (int n = 0; n < integerStrings.Length; n++)
+            OpenFileDialog otworzplik = new OpenFileDialog();
+            otworzplik.InitialDirectory = "c:\\";
+            otworzplik.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            otworzplik.FilterIndex = 2;
+            otworzplik.RestoreDirectory = true;
+            if (otworzplik.ShowDialog() == DialogResult.OK)
             {
-                integers[n] = int.Parse(integerStrings[n]);
+                string fileContent = File.ReadAllText("somefile.txt");
+                string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                int[] integers = new int[integerStrings.Length];
+                for (int n = 0; n < integerStrings.Length; n++)
+                {
+                    integers[n] = int.Parse(integerStrings[n]);
+                }
+                int indx = integers.Length;
+
+                int l = 1;
+                powotorzenia = powtorzenianUD.Value;
+                while (l < powotorzenia)
+                {
+                    Lkopcowanie.Text = "";
+                    sortowanie_kopcowe(integers);
+                    for (int i = 0; i < indx; i++)
+                    {
+                        Lkopcowanie.Text += integers[i] + "\n";
+                    }
+                    l++;
+                }
             }
-            int indx = integers.Length;
-            //
-           Lkopcowanie.Text = "";
-           sortowanie_kopcowe(integers);
-            for (int i = 0; i < indx; i++)
-            {
-                Lkopcowanie.Text += integers[i] + "\n";
-            }
+
         }
 
-       
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 

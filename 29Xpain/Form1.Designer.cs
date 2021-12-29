@@ -39,11 +39,14 @@ namespace _29Xpain
             this.Lkopcowanie = new System.Windows.Forms.Label();
             this.srtscbtn = new System.Windows.Forms.Button();
             this.Lscalanie = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.powtorzenianUD = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.powtorzenianUD)).BeginInit();
             this.SuspendLayout();
             // 
             // srtwbtn
             // 
-            this.srtwbtn.Location = new System.Drawing.Point(12, 39);
+            this.srtwbtn.Location = new System.Drawing.Point(12, 94);
             this.srtwbtn.Name = "srtwbtn";
             this.srtwbtn.Size = new System.Drawing.Size(166, 40);
             this.srtwbtn.TabIndex = 0;
@@ -54,7 +57,7 @@ namespace _29Xpain
             // Lwstaw
             // 
             this.Lwstaw.AutoSize = true;
-            this.Lwstaw.Location = new System.Drawing.Point(12, 121);
+            this.Lwstaw.Location = new System.Drawing.Point(12, 152);
             this.Lwstaw.Name = "Lwstaw";
             this.Lwstaw.Size = new System.Drawing.Size(156, 15);
             this.Lwstaw.TabIndex = 3;
@@ -63,17 +66,16 @@ namespace _29Xpain
             // Lbabel
             // 
             this.Lbabel.AutoSize = true;
-            this.Lbabel.Location = new System.Drawing.Point(184, 121);
+            this.Lbabel.Location = new System.Drawing.Point(184, 152);
             this.Lbabel.Name = "Lbabel";
             this.Lbabel.Size = new System.Drawing.Size(125, 15);
             this.Lbabel.TabIndex = 6;
             this.Lbabel.Text = "sortowanie bąbelkowe";
-            this.Lbabel.Click += new System.EventHandler(this.Lbabel_Click);
             // 
             // Lszybkie
             // 
             this.Lszybkie.AutoSize = true;
-            this.Lszybkie.Location = new System.Drawing.Point(329, 121);
+            this.Lszybkie.Location = new System.Drawing.Point(329, 152);
             this.Lszybkie.Name = "Lszybkie";
             this.Lszybkie.Size = new System.Drawing.Size(106, 15);
             this.Lszybkie.TabIndex = 7;
@@ -81,7 +83,7 @@ namespace _29Xpain
             // 
             // srtbbtn
             // 
-            this.srtbbtn.Location = new System.Drawing.Point(184, 38);
+            this.srtbbtn.Location = new System.Drawing.Point(184, 94);
             this.srtbbtn.Name = "srtbbtn";
             this.srtbbtn.Size = new System.Drawing.Size(139, 40);
             this.srtbbtn.TabIndex = 8;
@@ -91,7 +93,7 @@ namespace _29Xpain
             // 
             // srtsbtn
             // 
-            this.srtsbtn.Location = new System.Drawing.Point(329, 40);
+            this.srtsbtn.Location = new System.Drawing.Point(329, 94);
             this.srtsbtn.Name = "srtsbtn";
             this.srtsbtn.Size = new System.Drawing.Size(115, 39);
             this.srtsbtn.TabIndex = 9;
@@ -101,7 +103,7 @@ namespace _29Xpain
             // 
             // srthbtn
             // 
-            this.srthbtn.Location = new System.Drawing.Point(451, 40);
+            this.srthbtn.Location = new System.Drawing.Point(451, 94);
             this.srthbtn.Name = "srthbtn";
             this.srthbtn.Size = new System.Drawing.Size(173, 37);
             this.srthbtn.TabIndex = 10;
@@ -112,7 +114,7 @@ namespace _29Xpain
             // Lkopcowanie
             // 
             this.Lkopcowanie.AutoSize = true;
-            this.Lkopcowanie.Location = new System.Drawing.Point(451, 121);
+            this.Lkopcowanie.Location = new System.Drawing.Point(451, 152);
             this.Lkopcowanie.Name = "Lkopcowanie";
             this.Lkopcowanie.Size = new System.Drawing.Size(162, 15);
             this.Lkopcowanie.TabIndex = 11;
@@ -120,28 +122,45 @@ namespace _29Xpain
             // 
             // srtscbtn
             // 
-            this.srtscbtn.Location = new System.Drawing.Point(631, 40);
+            this.srtscbtn.Location = new System.Drawing.Point(630, 94);
             this.srtscbtn.Name = "srtscbtn";
             this.srtscbtn.Size = new System.Drawing.Size(157, 36);
             this.srtscbtn.TabIndex = 12;
             this.srtscbtn.Text = "Sortowanie przez scalanie";
             this.srtscbtn.UseVisualStyleBackColor = true;
-            
             // 
             // Lscalanie
             // 
             this.Lscalanie.AutoSize = true;
-            this.Lscalanie.Location = new System.Drawing.Point(631, 121);
+            this.Lscalanie.Location = new System.Drawing.Point(631, 152);
             this.Lscalanie.Name = "Lscalanie";
             this.Lscalanie.Size = new System.Drawing.Size(141, 15);
             this.Lscalanie.TabIndex = 13;
             this.Lscalanie.Text = "Sortowanie przez scalanie";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 15);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Wprowadź ilość powtórzeń";
+            // 
+            // powtorzenianUD
+            // 
+            this.powtorzenianUD.Location = new System.Drawing.Point(168, 11);
+            this.powtorzenianUD.Name = "powtorzenianUD";
+            this.powtorzenianUD.Size = new System.Drawing.Size(120, 23);
+            this.powtorzenianUD.TabIndex = 16;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.powtorzenianUD);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Lscalanie);
             this.Controls.Add(this.srtscbtn);
             this.Controls.Add(this.Lkopcowanie);
@@ -154,6 +173,7 @@ namespace _29Xpain
             this.Controls.Add(this.srtwbtn);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.powtorzenianUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,6 +191,8 @@ namespace _29Xpain
         private System.Windows.Forms.Label Lkopcowanie;
         private System.Windows.Forms.Button srtscbtn;
         private System.Windows.Forms.Label Lscalanie;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown powtorzenianUD;
     }
 }
 
