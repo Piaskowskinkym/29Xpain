@@ -21,23 +21,24 @@ namespace _29Xpain
         }
         public decimal powotorzenia;
 
-        void sortowanie(int n, int[] tab)
-        {
-            int pom, j;
-            for (int i = 1; i < n; i++)
+        
+            public void sortowanie(int n, int[] tab)
             {
-                pom = tab[i];
-                j = i - 1;
-
-                while (j >= 0 && tab[j] > pom)
+                int pom, j;
+                for (int i = 1; i < n; i++)
                 {
-                    tab[j + 1] = tab[j]; 
-                    --j;
-                }
-                tab[j + 1] = pom; 
-            }
-        }
+                    pom = tab[i];
+                    j = i - 1;
 
+                    while (j >= 0 && tab[j] > pom)
+                    {
+                        tab[j + 1] = tab[j];
+                        --j;
+                    }
+                    tab[j + 1] = pom;
+                }
+            }
+        
 
         void sortowane_bobelkowe(int[] tab)
         {
@@ -152,7 +153,43 @@ namespace _29Xpain
             }
         }
 
+        static public void scal(int[] numbers, int left, int mid, int right)
+        {
+            int[] temp = new int[25];
+            int i, eol, num, pos;
+            eol = (mid - 1);
+            pos = left;
+            num = (right - left + 1);
 
+            while ((left <= eol) && (mid <= right))
+            {
+                if (numbers[left] <= numbers[mid])
+                    temp[pos++] = numbers[left++];
+                else
+                    temp[pos++] = numbers[mid++];
+            }
+            while (left <= eol)
+                temp[pos++] = numbers[left++];
+            while (mid <= right)
+                temp[pos++] = numbers[mid++];
+            for (i = 0; i < num; i++)
+            {
+                numbers[right] = temp[right];
+                right--;
+            }
+        }
+
+        static public void sortowanie_scalanie(int[] numbers, int left, int right)
+        {
+            int mid;
+            if (right > left)
+            {
+                mid = (right + left) / 2;
+                sortowanie_scalanie(numbers, left, mid);
+                sortowanie_scalanie(numbers, (mid + 1), right);
+                scal(numbers, left, (mid + 1), right);
+            }
+        }
 
         private void srtwbtn_Click(object sender, EventArgs e)
           {
@@ -177,7 +214,7 @@ namespace _29Xpain
                 while (l < powotorzenia)
                 { 
                     Lwstaw.Text = "";
-                    sortowanie(integers.Length, integers);
+                  sortowanie(integers.Length, integers);
                     for (int i = 0; i < integers.Length; i++)
                     {
                         Lwstaw.Text += integers[i] + "\n";
@@ -292,13 +329,39 @@ namespace _29Xpain
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+      
 
-        }
-
-        private void label2_Click(object sender, EventArgs e)
+        private void srtscbtn_Click(object sender, EventArgs e)
         {
+            OpenFileDialog otworzplik = new OpenFileDialog();
+            otworzplik.InitialDirectory = "c:\\";
+            otworzplik.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            otworzplik.FilterIndex = 2;
+            otworzplik.RestoreDirectory = true;
+            if (otworzplik.ShowDialog() == DialogResult.OK)
+            {
+                string fileContent = File.ReadAllText("somefile.txt");
+                string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                int[] integers = new int[integerStrings.Length];
+                for (int n = 0; n < integerStrings.Length; n++)
+                {
+                    integers[n] = int.Parse(integerStrings[n]);
+                }
+
+                label6.Text = otworzplik.SafeFileName;
+                int l = 0;
+                powotorzenia = powtorzenianUD.Value;
+                while (l < powotorzenia)
+                {
+                    Lscalanie.Text = "";
+                    sortowanie_scalanie(integers, 0, integers.Length-1);
+                    for (int i = 0; i < integers.Length; i++)
+                    {
+                        Lscalanie.Text += integers[i] + "\n";
+                    }
+                    l++;
+                }
+            }
 
         }
     }
