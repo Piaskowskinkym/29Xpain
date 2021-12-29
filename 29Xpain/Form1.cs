@@ -20,11 +20,12 @@ namespace _29Xpain
 
         }
         public decimal powotorzenia;
+ 
 
-        
-            public void sortowanie(int n, int[] tab)
+        public void sortowanie(int n, int[] tab)
             {
-                int pom, j;
+            DateTime startTime = DateTime.Now;
+            int pom, j;
                 for (int i = 1; i < n; i++)
                 {
                     pom = tab[i];
@@ -37,7 +38,8 @@ namespace _29Xpain
                     }
                     tab[j + 1] = pom;
                 }
-            }
+           
+        }
         
 
         void sortowane_bobelkowe(int[] tab)
@@ -200,17 +202,20 @@ namespace _29Xpain
             otworzplik.RestoreDirectory = true;
             if (otworzplik.ShowDialog() == DialogResult.OK)
             {
-                string fileContent = File.ReadAllText("somefile.txt");
+                string fileContent = File.ReadAllText(otworzplik.FileName);
                 string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 int[] integers = new int[integerStrings.Length];
                 for (int n = 0; n < integerStrings.Length; n++)
                 {
                     integers[n] = int.Parse(integerStrings[n]);
                 }
-                label2.Text = otworzplik.SafeFileName;
-                // Sortowanie przez wstawianie
+                Lplikw.Text = otworzplik.SafeFileName;
+                //Liczba powtórzeń
                 int l = 0;
                 powotorzenia = powtorzenianUD.Value;
+                //Liczenie czasu
+                DateTime startTime = DateTime.Now;
+                // Sortowanie przez wstawianie
                 while (l < powotorzenia)
                 { 
                     Lwstaw.Text = "";
@@ -221,7 +226,11 @@ namespace _29Xpain
                     }
                     l++;
                 }
-            
+                DateTime stopTime = DateTime.Now;
+                TimeSpan roznica = stopTime - startTime;
+                new DateTime(roznica.Ticks).ToString("fff");
+                Lwczas.Text += " " + roznica;
+
             }
             
           }
@@ -235,17 +244,18 @@ namespace _29Xpain
             otworzplik.RestoreDirectory = true;
             if (otworzplik.ShowDialog() == DialogResult.OK)
             {
-                string fileContent = File.ReadAllText("somefile.txt");
+                string fileContent = File.ReadAllText(otworzplik.FileName);
                 string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 int[] integers = new int[integerStrings.Length];
                 for (int n = 0; n < integerStrings.Length; n++)
                 {
                     integers[n] = int.Parse(integerStrings[n]);
                 }
-                label3.Text = otworzplik.SafeFileName;
+                Lbplik.Text = otworzplik.SafeFileName;
                 // Sortowanie bąbelkowe
                 int l = 0;
                 powotorzenia = powtorzenianUD.Value;
+                DateTime startTime = DateTime.Now;
                 while (l < powotorzenia)
                 {
                     Lbabel.Text = "";
@@ -256,6 +266,10 @@ namespace _29Xpain
                     }
                     l++;
                 }
+                DateTime stopTime = DateTime.Now;
+                TimeSpan roznica = stopTime - startTime;
+                new DateTime(roznica.Ticks).ToString("fff");
+                Lbczas.Text += " " + roznica;
             }
           }
 
@@ -268,17 +282,18 @@ namespace _29Xpain
             otworzplik.RestoreDirectory = true;
             if (otworzplik.ShowDialog() == DialogResult.OK)
             {
-                string fileContent = File.ReadAllText("somefile.txt");
+                string fileContent = File.ReadAllText(otworzplik.FileName);
                 string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 int[] integers = new int[integerStrings.Length];
                 for (int n = 0; n < integerStrings.Length; n++)
                 {
                     integers[n] = int.Parse(integerStrings[n]);
                 }
-                label5.Text = otworzplik.SafeFileName;
+                Lkplik.Text = otworzplik.SafeFileName;
                 // Szybkie sortowanie
                 int l = 0;
                 powotorzenia = powtorzenianUD.Value;
+                DateTime startTime = DateTime.Now;
                 while (l < powotorzenia)
                 {
                     Lszybkie.Text = "";
@@ -289,7 +304,11 @@ namespace _29Xpain
                     }
                     l++;
                 }
-        }
+                DateTime stopTime = DateTime.Now;
+                TimeSpan roznica = stopTime - startTime;
+                new DateTime(roznica.Ticks).ToString("fff");
+                Lsczas.Text += " " + roznica;
+            }
 
 
         }
@@ -304,7 +323,7 @@ namespace _29Xpain
             otworzplik.RestoreDirectory = true;
             if (otworzplik.ShowDialog() == DialogResult.OK)
             {
-                string fileContent = File.ReadAllText("somefile.txt");
+                string fileContent = File.ReadAllText(otworzplik.FileName);
                 string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 int[] integers = new int[integerStrings.Length];
                 for (int n = 0; n < integerStrings.Length; n++)
@@ -312,9 +331,10 @@ namespace _29Xpain
                     integers[n] = int.Parse(integerStrings[n]);
                 }
 
-                label4.Text = otworzplik.SafeFileName;
+                Lsplik.Text = otworzplik.SafeFileName;
                 int l = 0;
                 powotorzenia = powtorzenianUD.Value;
+                DateTime startTime = DateTime.Now;
                 while (l < powotorzenia)
                 {
                     Lkopcowanie.Text = "";
@@ -325,6 +345,10 @@ namespace _29Xpain
                     }
                     l++;
                 }
+                DateTime stopTime = DateTime.Now;
+                TimeSpan roznica = stopTime - startTime;
+                new DateTime(roznica.Ticks).ToString("fff");
+                Lkczas.Text += " " + roznica;
             }
 
         }
@@ -340,7 +364,7 @@ namespace _29Xpain
             otworzplik.RestoreDirectory = true;
             if (otworzplik.ShowDialog() == DialogResult.OK)
             {
-                string fileContent = File.ReadAllText("somefile.txt");
+                string fileContent = File.ReadAllText(otworzplik.FileName);
                 string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 int[] integers = new int[integerStrings.Length];
                 for (int n = 0; n < integerStrings.Length; n++)
@@ -348,9 +372,10 @@ namespace _29Xpain
                     integers[n] = int.Parse(integerStrings[n]);
                 }
 
-                label6.Text = otworzplik.SafeFileName;
+                Lscplik.Text = otworzplik.SafeFileName;
                 int l = 0;
                 powotorzenia = powtorzenianUD.Value;
+                DateTime startTime = DateTime.Now;
                 while (l < powotorzenia)
                 {
                     Lscalanie.Text = "";
@@ -361,7 +386,16 @@ namespace _29Xpain
                     }
                     l++;
                 }
+                DateTime stopTime = DateTime.Now;
+                TimeSpan roznica = stopTime - startTime;
+                new DateTime(roznica.Ticks).ToString("fff");
+                Lscczas.Text += " " + roznica;
             }
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
 
         }
     }

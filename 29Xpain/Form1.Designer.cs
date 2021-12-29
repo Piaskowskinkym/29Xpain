@@ -41,11 +41,16 @@ namespace _29Xpain
             this.Lscalanie = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.powtorzenianUD = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.Lplikw = new System.Windows.Forms.Label();
+            this.Lbplik = new System.Windows.Forms.Label();
+            this.Lsplik = new System.Windows.Forms.Label();
+            this.Lkplik = new System.Windows.Forms.Label();
+            this.Lscplik = new System.Windows.Forms.Label();
+            this.Lwczas = new System.Windows.Forms.Label();
+            this.Lbczas = new System.Windows.Forms.Label();
+            this.Lsczas = new System.Windows.Forms.Label();
+            this.Lkczas = new System.Windows.Forms.Label();
+            this.Lscczas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.powtorzenianUD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,63 +164,118 @@ namespace _29Xpain
             this.powtorzenianUD.Name = "powtorzenianUD";
             this.powtorzenianUD.Size = new System.Drawing.Size(120, 23);
             this.powtorzenianUD.TabIndex = 16;
+            this.powtorzenianUD.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // label2
+            // Lplikw
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 140);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "label2";
-           
+            this.Lplikw.AutoSize = true;
+            this.Lplikw.Location = new System.Drawing.Point(13, 140);
+            this.Lplikw.Name = "Lplikw";
+            this.Lplikw.Size = new System.Drawing.Size(76, 15);
+            this.Lplikw.TabIndex = 17;
+            this.Lplikw.Text = "Wybrany Plik";
             // 
-            // label3
+            // Lbplik
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(185, 140);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "label3";
+            this.Lbplik.AutoSize = true;
+            this.Lbplik.Location = new System.Drawing.Point(185, 140);
+            this.Lbplik.Name = "Lbplik";
+            this.Lbplik.Size = new System.Drawing.Size(76, 15);
+            this.Lbplik.TabIndex = 18;
+            this.Lbplik.Text = "Wybrany Plik";
             // 
-            // label4
+            // Lsplik
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(330, 140);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "label4";
+            this.Lsplik.AutoSize = true;
+            this.Lsplik.Location = new System.Drawing.Point(330, 140);
+            this.Lsplik.Name = "Lsplik";
+            this.Lsplik.Size = new System.Drawing.Size(76, 15);
+            this.Lsplik.TabIndex = 19;
+            this.Lsplik.Text = "Wybrany Plik";
             // 
-            // label5
+            // Lkplik
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(451, 140);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 15);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "label5";
+            this.Lkplik.AutoSize = true;
+            this.Lkplik.Location = new System.Drawing.Point(451, 140);
+            this.Lkplik.Name = "Lkplik";
+            this.Lkplik.Size = new System.Drawing.Size(76, 15);
+            this.Lkplik.TabIndex = 20;
+            this.Lkplik.Text = "Wybrany Plik";
             // 
-            // label6
+            // Lscplik
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(630, 140);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 15);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "label6";
+            this.Lscplik.AutoSize = true;
+            this.Lscplik.Location = new System.Drawing.Point(630, 140);
+            this.Lscplik.Name = "Lscplik";
+            this.Lscplik.Size = new System.Drawing.Size(76, 15);
+            this.Lscplik.TabIndex = 21;
+            this.Lscplik.Text = "Wybrany Plik";
+            // 
+            // Lwczas
+            // 
+            this.Lwczas.AutoSize = true;
+            this.Lwczas.Location = new System.Drawing.Point(13, 58);
+            this.Lwczas.Name = "Lwczas";
+            this.Lwczas.Size = new System.Drawing.Size(40, 15);
+            this.Lwczas.TabIndex = 22;
+            this.Lwczas.Text = "Czas : ";
+            // 
+            // Lbczas
+            // 
+            this.Lbczas.AutoSize = true;
+            this.Lbczas.Location = new System.Drawing.Point(185, 58);
+            this.Lbczas.Name = "Lbczas";
+            this.Lbczas.Size = new System.Drawing.Size(43, 15);
+            this.Lbczas.TabIndex = 23;
+            this.Lbczas.Text = "Czas :  ";
+            // 
+            // Lsczas
+            // 
+            this.Lsczas.AutoSize = true;
+            this.Lsczas.Location = new System.Drawing.Point(330, 58);
+            this.Lsczas.Name = "Lsczas";
+            this.Lsczas.Size = new System.Drawing.Size(37, 15);
+            this.Lsczas.TabIndex = 24;
+            this.Lsczas.Text = "Czas :";
+            this.Lsczas.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // Lkczas
+            // 
+            this.Lkczas.AutoSize = true;
+            this.Lkczas.Location = new System.Drawing.Point(451, 58);
+            this.Lkczas.Name = "Lkczas";
+            this.Lkczas.Size = new System.Drawing.Size(37, 15);
+            this.Lkczas.TabIndex = 25;
+            this.Lkczas.Text = "Czas :";
+            // 
+            // Lscczas
+            // 
+            this.Lscczas.AutoSize = true;
+            this.Lscczas.Location = new System.Drawing.Point(630, 58);
+            this.Lscczas.Name = "Lscczas";
+            this.Lscczas.Size = new System.Drawing.Size(37, 15);
+            this.Lscczas.TabIndex = 26;
+            this.Lscczas.Text = "Czas :";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Lscczas);
+            this.Controls.Add(this.Lkczas);
+            this.Controls.Add(this.Lsczas);
+            this.Controls.Add(this.Lbczas);
+            this.Controls.Add(this.Lwczas);
+            this.Controls.Add(this.Lscplik);
+            this.Controls.Add(this.Lkplik);
+            this.Controls.Add(this.Lsplik);
+            this.Controls.Add(this.Lbplik);
+            this.Controls.Add(this.Lplikw);
             this.Controls.Add(this.powtorzenianUD);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Lscalanie);
@@ -250,11 +310,16 @@ namespace _29Xpain
         private System.Windows.Forms.Label Lscalanie;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown powtorzenianUD;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label Lplikw;
+        private System.Windows.Forms.Label Lbplik;
+        private System.Windows.Forms.Label Lsplik;
+        private System.Windows.Forms.Label Lkplik;
+        private System.Windows.Forms.Label Lscplik;
+        private System.Windows.Forms.Label Lwczas;
+        private System.Windows.Forms.Label Lbczas;
+        private System.Windows.Forms.Label Lsczas;
+        private System.Windows.Forms.Label Lkczas;
+        private System.Windows.Forms.Label Lscczas;
     }
 }
 
