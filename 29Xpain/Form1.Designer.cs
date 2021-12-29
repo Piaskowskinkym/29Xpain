@@ -41,12 +41,17 @@ namespace _29Xpain
             this.Lscalanie = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.powtorzenianUD = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.powtorzenianUD)).BeginInit();
             this.SuspendLayout();
             // 
             // srtwbtn
             // 
-            this.srtwbtn.Location = new System.Drawing.Point(12, 94);
+            this.srtwbtn.Location = new System.Drawing.Point(12, 79);
             this.srtwbtn.Name = "srtwbtn";
             this.srtwbtn.Size = new System.Drawing.Size(166, 40);
             this.srtwbtn.TabIndex = 0;
@@ -57,7 +62,7 @@ namespace _29Xpain
             // Lwstaw
             // 
             this.Lwstaw.AutoSize = true;
-            this.Lwstaw.Location = new System.Drawing.Point(12, 152);
+            this.Lwstaw.Location = new System.Drawing.Point(12, 186);
             this.Lwstaw.Name = "Lwstaw";
             this.Lwstaw.Size = new System.Drawing.Size(156, 15);
             this.Lwstaw.TabIndex = 3;
@@ -66,7 +71,7 @@ namespace _29Xpain
             // Lbabel
             // 
             this.Lbabel.AutoSize = true;
-            this.Lbabel.Location = new System.Drawing.Point(184, 152);
+            this.Lbabel.Location = new System.Drawing.Point(174, 186);
             this.Lbabel.Name = "Lbabel";
             this.Lbabel.Size = new System.Drawing.Size(125, 15);
             this.Lbabel.TabIndex = 6;
@@ -75,7 +80,7 @@ namespace _29Xpain
             // Lszybkie
             // 
             this.Lszybkie.AutoSize = true;
-            this.Lszybkie.Location = new System.Drawing.Point(329, 152);
+            this.Lszybkie.Location = new System.Drawing.Point(330, 186);
             this.Lszybkie.Name = "Lszybkie";
             this.Lszybkie.Size = new System.Drawing.Size(106, 15);
             this.Lszybkie.TabIndex = 7;
@@ -83,7 +88,7 @@ namespace _29Xpain
             // 
             // srtbbtn
             // 
-            this.srtbbtn.Location = new System.Drawing.Point(184, 94);
+            this.srtbbtn.Location = new System.Drawing.Point(185, 79);
             this.srtbbtn.Name = "srtbbtn";
             this.srtbbtn.Size = new System.Drawing.Size(139, 40);
             this.srtbbtn.TabIndex = 8;
@@ -93,7 +98,7 @@ namespace _29Xpain
             // 
             // srtsbtn
             // 
-            this.srtsbtn.Location = new System.Drawing.Point(329, 94);
+            this.srtsbtn.Location = new System.Drawing.Point(330, 80);
             this.srtsbtn.Name = "srtsbtn";
             this.srtsbtn.Size = new System.Drawing.Size(115, 39);
             this.srtsbtn.TabIndex = 9;
@@ -103,7 +108,7 @@ namespace _29Xpain
             // 
             // srthbtn
             // 
-            this.srthbtn.Location = new System.Drawing.Point(451, 94);
+            this.srthbtn.Location = new System.Drawing.Point(451, 82);
             this.srthbtn.Name = "srthbtn";
             this.srthbtn.Size = new System.Drawing.Size(173, 37);
             this.srthbtn.TabIndex = 10;
@@ -114,7 +119,7 @@ namespace _29Xpain
             // Lkopcowanie
             // 
             this.Lkopcowanie.AutoSize = true;
-            this.Lkopcowanie.Location = new System.Drawing.Point(451, 152);
+            this.Lkopcowanie.Location = new System.Drawing.Point(451, 186);
             this.Lkopcowanie.Name = "Lkopcowanie";
             this.Lkopcowanie.Size = new System.Drawing.Size(162, 15);
             this.Lkopcowanie.TabIndex = 11;
@@ -122,7 +127,7 @@ namespace _29Xpain
             // 
             // srtscbtn
             // 
-            this.srtscbtn.Location = new System.Drawing.Point(630, 94);
+            this.srtscbtn.Location = new System.Drawing.Point(630, 83);
             this.srtscbtn.Name = "srtscbtn";
             this.srtscbtn.Size = new System.Drawing.Size(157, 36);
             this.srtscbtn.TabIndex = 12;
@@ -132,7 +137,7 @@ namespace _29Xpain
             // Lscalanie
             // 
             this.Lscalanie.AutoSize = true;
-            this.Lscalanie.Location = new System.Drawing.Point(631, 152);
+            this.Lscalanie.Location = new System.Drawing.Point(630, 186);
             this.Lscalanie.Name = "Lscalanie";
             this.Lscalanie.Size = new System.Drawing.Size(141, 15);
             this.Lscalanie.TabIndex = 13;
@@ -154,11 +159,62 @@ namespace _29Xpain
             this.powtorzenianUD.Size = new System.Drawing.Size(120, 23);
             this.powtorzenianUD.TabIndex = 16;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 140);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "label2";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(185, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(330, 140);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "label4";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(451, 140);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 15);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "label5";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(630, 140);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 15);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "label6";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.powtorzenianUD);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Lscalanie);
@@ -193,6 +249,11 @@ namespace _29Xpain
         private System.Windows.Forms.Label Lscalanie;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown powtorzenianUD;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 

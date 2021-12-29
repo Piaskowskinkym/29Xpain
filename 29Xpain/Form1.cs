@@ -31,10 +31,10 @@ namespace _29Xpain
 
                 while (j >= 0 && tab[j] > pom)
                 {
-                    tab[j + 1] = tab[j]; //przesuwanie elementów
+                    tab[j + 1] = tab[j]; 
                     --j;
                 }
-                tab[j + 1] = pom; //wstawienie pom w odpowiednie miejsce
+                tab[j + 1] = pom; 
             }
         }
 
@@ -58,35 +58,58 @@ namespace _29Xpain
             while (b > 1);
         }
 
-
-       /* void szybkie_sortowanie(int[] tab, int lewy, int prawy)
+        void szybkie_sortowanie(int[] arr, int left, int right)
         {
-            if (prawy <= lewy) return;
-
-            int i = lewy -1, j = prawy +1 ,
-            pivot = tab[(lewy + prawy) / 2];
-
-            while (true)
+            if (left < right)
             {
-                while (pivot > tab[i++]) ;
-                while (pivot < tab[j-=1]) ;
-                if (i <= j)
+                int pivot = przedzial(arr, left, right);
+
+                if (pivot > 1)
                 {
-                    int it = i;
-                    tab[i] = tab[j];
-                    tab[j] = tab[it];
+                    szybkie_sortowanie(arr, left, pivot - 1);
                 }
-                else
-                    break;
+                if (pivot + 1 < right)
+                {
+                    szybkie_sortowanie(arr, pivot + 1, right);
+                }
             }
 
-            if (j > lewy)
-                szybkie_sortowanie(tab, lewy, j);
-            if (i < prawy)
-                szybkie_sortowanie(tab, i, prawy);
-        }*/
+        }
+        int przedzial(int[] arr, int left, int right)
+        {
+            int pivot = arr[left];
+            while (true)
+            {
 
-         void sortowanie_kopcowe(int[] tab)
+                while (arr[left] < pivot)
+                {
+                    left++;
+                }
+
+                while (arr[right] > pivot)
+                {
+                    right--;
+                }
+
+                if (left < right)
+                {
+                    if (arr[left] == arr[right]) return right;
+
+                    int temp = arr[left];
+                    arr[left] = arr[right];
+                    arr[right] = temp;
+
+
+                }
+                else
+                {
+                    return right;
+                }
+            }
+        }
+
+
+        void sortowanie_kopcowe(int[] tab)
         {
             int n = tab.Length;
             for (int i = n / 2 - 1; i >= 0; i--)
@@ -147,15 +170,15 @@ namespace _29Xpain
                 {
                     integers[n] = int.Parse(integerStrings[n]);
                 }
-                int indx = integers.Length;
+                label2.Text = otworzplik.SafeFileName;
                 // Sortowanie przez wstawianie
-                int l = 1;
+                int l = 0;
                 powotorzenia = powtorzenianUD.Value;
                 while (l < powotorzenia)
                 { 
                     Lwstaw.Text = "";
-                    sortowanie(indx, integers);
-                    for (int i = 0; i < indx; i++)
+                    sortowanie(integers.Length, integers);
+                    for (int i = 0; i < integers.Length; i++)
                     {
                         Lwstaw.Text += integers[i] + "\n";
                     }
@@ -182,15 +205,15 @@ namespace _29Xpain
                 {
                     integers[n] = int.Parse(integerStrings[n]);
                 }
-                int indx = integers.Length;
+                label3.Text = otworzplik.SafeFileName;
                 // Sortowanie bąbelkowe
-                int l = 1;
+                int l = 0;
                 powotorzenia = powtorzenianUD.Value;
                 while (l < powotorzenia)
                 {
                     Lbabel.Text = "";
                     sortowane_bobelkowe(integers);
-                    for (int i = 0; i < indx; i++)
+                    for (int i = 0; i < integers.Length; i++)
                     {
                         Lbabel.Text += integers[i] + "\n";
                     }
@@ -215,15 +238,15 @@ namespace _29Xpain
                 {
                     integers[n] = int.Parse(integerStrings[n]);
                 }
-                int indx = integers.Length;
+                label5.Text = otworzplik.SafeFileName;
                 // Szybkie sortowanie
-                int l = 1;
+                int l = 0;
                 powotorzenia = powtorzenianUD.Value;
                 while (l < powotorzenia)
                 {
                     Lszybkie.Text = "";
-                    //szybkie_sortowanie(integers, 0, indx-1);
-                    for (int i = 0; i < indx; i++)
+                   szybkie_sortowanie(integers, 0, integers.Length-1);
+                    for (int i = 0; i < integers.Length; i++)
                     {
                         Lszybkie.Text += integers[i] + "\n";
                     }
@@ -251,15 +274,15 @@ namespace _29Xpain
                 {
                     integers[n] = int.Parse(integerStrings[n]);
                 }
-                int indx = integers.Length;
 
-                int l = 1;
+                label4.Text = otworzplik.SafeFileName;
+                int l = 0;
                 powotorzenia = powtorzenianUD.Value;
                 while (l < powotorzenia)
                 {
                     Lkopcowanie.Text = "";
                     sortowanie_kopcowe(integers);
-                    for (int i = 0; i < indx; i++)
+                    for (int i = 0; i < integers.Length; i++)
                     {
                         Lkopcowanie.Text += integers[i] + "\n";
                     }
@@ -270,6 +293,11 @@ namespace _29Xpain
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
