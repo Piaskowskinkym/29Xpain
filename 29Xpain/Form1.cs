@@ -195,6 +195,7 @@ namespace _29Xpain
 
         private void srtwbtn_Click(object sender, EventArgs e)
           {
+            //wczytanie pliku
             OpenFileDialog otworzplik = new OpenFileDialog();
             otworzplik.InitialDirectory = "c:\\";
             otworzplik.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
@@ -202,6 +203,7 @@ namespace _29Xpain
             otworzplik.RestoreDirectory = true;
             if (otworzplik.ShowDialog() == DialogResult.OK)
             {
+                //stworzenie tabeli zwierającą dane z pliku
                 string fileContent = File.ReadAllText(otworzplik.FileName);
                 string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 int[] integers = new int[integerStrings.Length];
@@ -209,6 +211,7 @@ namespace _29Xpain
                 {
                     integers[n] = int.Parse(integerStrings[n]);
                 }
+                //wyświetlenie nazwy pliku
                 Lplikw.Text = otworzplik.SafeFileName;
                 //Liczba powtórzeń
                 int l = 0;
@@ -217,7 +220,8 @@ namespace _29Xpain
                 DateTime startTime = DateTime.Now;
                 // Sortowanie przez wstawianie
                 while (l < powotorzenia)
-                { 
+                {
+                    //sortowanie przez wstawianie
                     Lwstaw.Text = "";
                   sortowanie(integers.Length, integers);
                     for (int i = 0; i < integers.Length; i++)
@@ -226,9 +230,11 @@ namespace _29Xpain
                     }
                     l++;
                 }
+                //zakończenie liczenia czasu
                 DateTime stopTime = DateTime.Now;
                 TimeSpan roznica = stopTime - startTime;
                 new DateTime(roznica.Ticks).ToString("fff");
+                //wypisanie czasu sortowania
                 Lwczas.Text += " " + roznica;
 
             }
@@ -237,6 +243,7 @@ namespace _29Xpain
 
           private void srtbbtn_Click(object sender, EventArgs e)
           {
+            //wczytanie pliku
             OpenFileDialog otworzplik = new OpenFileDialog();
             otworzplik.InitialDirectory = "c:\\";
             otworzplik.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
@@ -244,6 +251,7 @@ namespace _29Xpain
             otworzplik.RestoreDirectory = true;
             if (otworzplik.ShowDialog() == DialogResult.OK)
             {
+                //stworzenie tabeli zwierającą dane z pliku
                 string fileContent = File.ReadAllText(otworzplik.FileName);
                 string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 int[] integers = new int[integerStrings.Length];
@@ -251,13 +259,15 @@ namespace _29Xpain
                 {
                     integers[n] = int.Parse(integerStrings[n]);
                 }
+                //wyświetlenie nazwy pliku
                 Lbplik.Text = otworzplik.SafeFileName;
-                // Sortowanie bąbelkowe
+                //Liczba powtórzeń
                 int l = 0;
                 powotorzenia = powtorzenianUD.Value;
                 DateTime startTime = DateTime.Now;
                 while (l < powotorzenia)
                 {
+                    //sortowanie bombelkowe
                     Lbabel.Text = "";
                     sortowane_bobelkowe(integers);
                     for (int i = 0; i < integers.Length; i++)
@@ -266,15 +276,18 @@ namespace _29Xpain
                     }
                     l++;
                 }
+                //zakończenie liczenia czasu
                 DateTime stopTime = DateTime.Now;
                 TimeSpan roznica = stopTime - startTime;
                 new DateTime(roznica.Ticks).ToString("fff");
+                //wypisanie czasu sortowania
                 Lbczas.Text += " " + roznica;
             }
           }
 
         private void srtsbtn_Click(object sender, EventArgs e)
         {
+            //wczytanie pliku
             OpenFileDialog otworzplik = new OpenFileDialog();
             otworzplik.InitialDirectory = "c:\\";
             otworzplik.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
@@ -282,6 +295,7 @@ namespace _29Xpain
             otworzplik.RestoreDirectory = true;
             if (otworzplik.ShowDialog() == DialogResult.OK)
             {
+                //stworzenie tabeli zwierającą dane z pliku
                 string fileContent = File.ReadAllText(otworzplik.FileName);
                 string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 int[] integers = new int[integerStrings.Length];
@@ -289,13 +303,15 @@ namespace _29Xpain
                 {
                     integers[n] = int.Parse(integerStrings[n]);
                 }
+                //wyświetlenie nazwy pliku
                 Lkplik.Text = otworzplik.SafeFileName;
-                // Szybkie sortowanie
+                //Liczba powtórzeń
                 int l = 0;
                 powotorzenia = powtorzenianUD.Value;
                 DateTime startTime = DateTime.Now;
                 while (l < powotorzenia)
                 {
+                    //sortowanie szybkie
                     Lszybkie.Text = "";
                    szybkie_sortowanie(integers, 0, integers.Length-1);
                     for (int i = 0; i < integers.Length; i++)
@@ -304,9 +320,11 @@ namespace _29Xpain
                     }
                     l++;
                 }
+                //zakończenie liczenia czasu
                 DateTime stopTime = DateTime.Now;
                 TimeSpan roznica = stopTime - startTime;
                 new DateTime(roznica.Ticks).ToString("fff");
+                //wypisanie czasu sortowania
                 Lsczas.Text += " " + roznica;
             }
 
@@ -316,6 +334,7 @@ namespace _29Xpain
 
         private void srthbtn_Click(object sender, EventArgs e)
         {
+            //wczytanie pliku
             OpenFileDialog otworzplik = new OpenFileDialog();
             otworzplik.InitialDirectory = "c:\\";
             otworzplik.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
@@ -323,6 +342,7 @@ namespace _29Xpain
             otworzplik.RestoreDirectory = true;
             if (otworzplik.ShowDialog() == DialogResult.OK)
             {
+                //stworzenie tabeli zwierającą dane z pliku
                 string fileContent = File.ReadAllText(otworzplik.FileName);
                 string[] integerStrings = fileContent.Split(new char[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 int[] integers = new int[integerStrings.Length];
@@ -330,13 +350,15 @@ namespace _29Xpain
                 {
                     integers[n] = int.Parse(integerStrings[n]);
                 }
-
+                //wyświetlenie nazwy pliku
                 Lsplik.Text = otworzplik.SafeFileName;
+                //Liczba powtórzeń
                 int l = 0;
                 powotorzenia = powtorzenianUD.Value;
                 DateTime startTime = DateTime.Now;
                 while (l < powotorzenia)
                 {
+                    //sortowanie kopcowe
                     Lkopcowanie.Text = "";
                     sortowanie_kopcowe(integers);
                     for (int i = 0; i < integers.Length; i++)
@@ -345,9 +367,11 @@ namespace _29Xpain
                     }
                     l++;
                 }
+                //zakończenie liczenia czasu
                 DateTime stopTime = DateTime.Now;
                 TimeSpan roznica = stopTime - startTime;
                 new DateTime(roznica.Ticks).ToString("fff");
+                //wypisanie czasu sortowania
                 Lkczas.Text += " " + roznica;
             }
 
@@ -375,7 +399,7 @@ namespace _29Xpain
                 }
                 //wyświetlenie nazwy pliku
                 Lscplik.Text = otworzplik.SafeFileName;
-                //liczba powtózeńsortowania
+                //liczba powtózeń
                 int l = 0;
                 powotorzenia = powtorzenianUD.Value;
                 //rozpoczęcie liczenia czasu
